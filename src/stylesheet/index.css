@@ -12,7 +12,11 @@
     --app-orange-hover:#fe7a2d;
     --app-blue:#4267B2;
     --app-blue-hover:#305bb3;
-    --app-white:rgb(244, 246, 248);
+    --app-white:#f4f6f8;
+    --app-black:#181818;
+    --app-dark-grey:#222;
+    --app-medium-grey:#b0b3b8;
+    --app-light-grey:#e4e6eb;
     --app-light-text-color: #f4f6f8;
     --app-dark-text-color: #1c1c1c;
     --app-grey-text-color: #343434;
@@ -20,14 +24,14 @@
     --app-btn-height: 46px;
     --app-btn-width: 100%;
     --app-letter-spacing: 0.2px;
-    --app-header-line-height: 100px;
+    --app-header-line-height: 56px;
     --app-text-line-height: 50px;
     --app-main-font-size: 18px;
     --app-secondary-font-size: 14px;
 }
     
 body {
-    background-color: var(--app-dark-bg);
+    background-color: var(--app-black);
 }
 
 .container {
@@ -69,6 +73,7 @@ header {
     line-height: var(--app-header-line-height);
     height: 56px;
     min-width: 350px;
+    background-color: var(--app-dark-grey);
 }
 
 header h1 {
@@ -78,14 +83,14 @@ header h1 {
 }
 
 .avatar {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: var(--app-white) url("../images/avatar.png") center center / cover no-repeat;
     line-height: var(--app-header-line-height);
     position: relative;
     top: 50%;
-    transform: translateY(25%);
+    transform: translateY(5%);
 }
 
 /* Show regular nav menu when screen width is 923px and above */
@@ -108,37 +113,18 @@ header h1 {
     }
     
     nav ul li a {
-        font-size: var(--app-main-font-size);
+        font-size: 16px;
         font-weight: 600;
         letter-spacing: var(--app-letter-spcaing);
         cursor: pointer;
         text-decoration: none;
         color: var(--app-light-text-color);
         position: relative;
+        transition: color 0.25s ease-in-out;
     }
 
-    /* Scale from center */
-    nav ul li a::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 0.1em;
-        background-color: var(--app-light-text-color);
-        opacity: 0;
-        transition: opacity 300ms, transform 300ms;
-    }
-
-    nav ul li a::after {
-        opacity: 1;
-        transform: scale(0);
-        transform-origin: center;
-    }
-    
-    nav ul li a:hover::after,
-    nav ul li a:focus::after{
-        transform: scale(1);
+    nav ul li a:hover {
+        color: var(--app-blue);
     }
 }
 
@@ -157,7 +143,69 @@ header h1 {
     
     .burger-menu:hover {
         display: block;
-        color: var(--app-purple);
+        color: var(--app-blue);
     }
 }
+
+/**************************************************/
+/*****      MAIN CONTAINER                   ******/
+/**************************************************/
+
+.timeline {
+    width: 50%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-post {
+    padding: 20px;
+    width: 100%;
+    background-color: var(--app-dark-grey);
+    margin: 40px 0px;
+    border-radius: 5px;
+}
+
+.timeline-post .form textarea {
+    width: 100%;
+    height: 100px;
+    border: none;
+    background: none;
+    font-size: 17px;
+    font-weight: 400;
+    text-align: left;
+    color: var(--app-white);
+    resize: none;
+}
+
+.timeline-post .form .flexbox {
+    margin-top: 20px;
+}
+
+.timeline-post .form .flexbox input[type="file"] {
+    width: 88%;
+}
+
+.timeline-post .form .flexbox button {
+    width: 12%;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: background-color 0.25s ease-in-out;
+    background-color: var(--app-blue);
+    color: #fff;
+    padding: 0 10px;
+}
+
+.timeline-post .form .flexbox button:hover {
+    background-color: var(--app-blue-hover);
+}
+
+
+
 
