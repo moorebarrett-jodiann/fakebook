@@ -1,0 +1,51 @@
+@import "./reset.css";
+
+:root {
+    --app-dark-bg:#1a1d28;
+    --app-red:#ff3c57;
+    --app-yellow:#ffd13c;
+    --app-green:#33ab4e;
+    --app-green-hover:#158f32;
+    --app-purple:#833cff;
+    --app-orange:#ff833c;
+    --app-pink:#f85fdc;
+    --app-orange-hover:#fe7a2d;
+    --app-blue:#3c57ff;
+    --app-blue-hover:#364ee6;
+    --app-white:rgb(244, 246, 248);
+
+    --app-btn-height: 46px;
+    --app-btn-width: 100%;
+}
+    
+body {
+    background-color: var(--app-dark-bg);
+}
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+    display: grid;
+    place-items: center;
+}
+
+/**************************************************/
+/*****       Main                            ******/
+/**************************************************/
+h1, h2, h3, a, p {
+    color: rgb(244, 246, 248);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+p {
+    font-size: 17px;
+}
+
+.flexbox {
+    display: flex;
+}
