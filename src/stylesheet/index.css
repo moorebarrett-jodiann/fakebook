@@ -250,7 +250,7 @@ header h1 {
     border: 1px solid rgba(58, 58, 58, 0.3);
     background-color: var(--app-white);
     border-radius: 5px;
-    animation: appear 0.4s ease-in;
+    animation: appearUp 0.4s ease-in;
     transition: border 0.25s ease-in-out;
     padding: 15px;
 }
@@ -296,7 +296,7 @@ header h1 {
 .message p {
     opacity: 0;
     font-size: 14px;
-    animation: disappear 5s ease-in-out;
+    animation: disappearUp 5s ease-in-out;
 }
 
 .message p.invalid {
@@ -304,10 +304,47 @@ header h1 {
 }
 
 /**************************************************/
+/*****       Profile Details                 ******/
+/**************************************************/
+
+.overlay {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(26, 29, 40, 0.5);
+    z-index: 10;
+    visibility: hidden;
+}
+
+.overlay .flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-info {
+    width: 300px;
+    height: 400px;
+    background-color: var(--app-white);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
+    border-radius: 5px;
+    z-index: 100;
+    animation: appearDown 0.25s ease-out;
+    display: none;
+}
+
+
+
+/**************************************************/
 /*****       Animations                      ******/
 /**************************************************/
 
-@keyframes appear {
+@keyframes appearUp {
     from {
         opacity: 0;
         transform: translate(0px, 10px);
@@ -318,11 +355,13 @@ header h1 {
     }
 }
 
-@keyframes disappear {
+@keyframes appearDown {
     from {
-        opacity: 1;
+        opacity: 0;
+        transform: translate(0px, -10px);
     }
     to {
-        opacity: 0;
+        opacity: 1;
+        transform: translate(0);
     }
 }

@@ -91,24 +91,27 @@ onEvent('change', postFile, function() {
 /**-------------------------Subscriber Profile------------------------------- */
 
 const profilePhoto = select('.avatar');
-const overlay = document.querySelector('.overlay');
+const overlay = select('.overlay');
+const profileInfo = select('.profile-info');
 
-contactBtn.addEventListener('click', () => {
+onEvent('click', profilePhoto, function () {
   overlay.removeAttribute('style', `
     visibility: hidden;
   `);
   overlay.setAttribute('style', `
     visibility: visible;
   `);
+  profileInfo.style.display = 'block';
 });
 
-overlay.addEventListener('click', function (){
+onEvent('click', overlay, function () {
   this.removeAttribute('style', `
     visibility: visible;
   `);
   this.setAttribute('style', `
     visibility: hidden;
   `);
+  profileInfo.style.display = 'none';
 });
 
 
