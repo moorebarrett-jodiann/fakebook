@@ -32,7 +32,9 @@
                             <li><a href="#">Settings</a></li>
                         </ul>
                     </nav>
-                    <div class="avatar"></div>
+                    <div class="avatar">
+                        <img src="src/images/avatar.png" alt="Profile Picture"/>
+                    </div>
                 </div>
             </header>
             <div class="timeline">
@@ -41,13 +43,18 @@
                         <form novalidate>
                             <textarea class="post-input" placeholder="Share something with us."></textarea>
                             <div class="flexbox">
-                                <input type="file" class="selected-file" accept=".png, .jpg, .jpeg" />
+                                <label for="fileInput"> 
+                                    <i class="fa-regular fa-image file-icon"></i>
+                                </label>
+                                <input id="fileInput" type="file" class="post-file" accept="image/*" />
+                                <span class="file-name-selected"></span>
                                 <button class="create-post">Post</button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="timeline-container">
+                <div class="message"></div>
+                <div class="timeline-container grid">
 
                 </div>
             </div>
