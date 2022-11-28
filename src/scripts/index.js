@@ -17,6 +17,14 @@ const postFile = select('.post-file');
 const fileNameSpan = select('.file-name-selected');
 const createPost = select('.create-post');
 const message = select('.message');
+const subscriber = new Subscriber(
+    1, 
+    'Jodi-Ann Barrett', 
+    'jbarrett', 
+    'jbarrett@email.com',
+    ['@FoodNetworkCA', '@IslandVybz', '@TED'],
+    ['Women in IT', 'International Travellers', 'Netflix Fans'],
+);
 
 /**-------------------------------------------------------------------------- */
 
@@ -30,7 +38,6 @@ function submitForm(postInput, postFile) {
         let url = URL.createObjectURL(postFile.files[0]);
         let image = select('.avatar').innerHTML;
         let today = new Date();
-        const subscriber = new Subscriber(1, 'Jodi-Ann Barrett', 'jbarrett', 'jbarrett@email.com');
 
         // build grid children
         var div = document.createElement('div');
@@ -55,8 +62,6 @@ function submitForm(postInput, postFile) {
 
 // function to validate form input
 function validateFormInput () {
-    // console.log(postInput.value);
-    // console.log(postFile.value);
     if(postInput.value === '' && postFile.value === '') {
         message.innerHTML = `<p class="invalid">Your post cannot be empty.</p>`;
     } else {
@@ -88,11 +93,24 @@ onEvent('change', postFile, function() {
 
 /**-------------------------------------------------------------------------- */
 
-/**-------------------------Subscriber Profile------------------------------- */
+/**---------------Subscriber Profile Functions and Events-------------------- */
 
 const profilePhoto = select('.avatar');
 const overlay = select('.overlay');
 const profileInfo = select('.profile-info');
+const profileDetails = select('.profile-details');
+
+function retriveSubscriberInfo() {
+    profileDetails.innerHTML = `
+        <p><span class="profile-label">ID: </span>${subscriber.id}</p>
+        <p><span class="profile-label">Name: </span>${subscriber.name}</p>
+        <p><span class="profile-label">User Name: </span>${subscriber.userName}</p>
+        <p><span class="profile-label">Email: </span>${subscriber.email}</p>
+        <p><span class="profile-label">Pages: </span>${subscriber.pages.join(', ')}</p>
+        <p><span class="profile-label">Groups: </span>${subscriber.groups.join(', ')}</p>
+        <p><span class="profile-label">Monetized Subscription: </span>${subscriber.canMonetize}</p>
+    `;
+}
 
 onEvent('click', profilePhoto, function () {
   overlay.removeAttribute('style', `
@@ -102,6 +120,7 @@ onEvent('click', profilePhoto, function () {
     visibility: visible;
   `);
   profileInfo.style.display = 'block';
+  retriveSubscriberInfo();
 });
 
 onEvent('click', overlay, function () {

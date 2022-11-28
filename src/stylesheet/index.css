@@ -86,15 +86,9 @@ header h1 {
 }
 
 .avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 1px solid rgba(123, 146, 192, 0.5);
+    width: 40px;
+    height: 40px;
     line-height: var(--app-header-line-height);
-    position: relative;
-    top: 50%;
-    transform: translateY(5%);
-    overflow: hidden;
 }
 
 .avatar img {
@@ -104,6 +98,7 @@ header h1 {
     height: 100%;
     display: grid;
     place-items: center;
+    margin-top: 8px;
 }
 
 /* Show regular nav menu when screen width is 923px and above */
@@ -328,8 +323,8 @@ header h1 {
 }
 
 .profile-info {
-    width: 300px;
-    height: 400px;
+    width: 400px;
+    height: 600px;
     background-color: var(--app-white);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
     border-radius: 5px;
@@ -338,7 +333,30 @@ header h1 {
     display: none;
 }
 
+.profile-info .profile-avatar {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.profile-info .profile-details {
+    padding: 20px;
+    text-align: left;
+}
+
+.profile-info .profile-details p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.profile-info .profile-details p span {
+    font-weight: 600;
+}
+
+.profile-info .profile-details p + p {
+    margin-bottom: 10px;
+}
 
 /**************************************************/
 /*****       Animations                      ******/
