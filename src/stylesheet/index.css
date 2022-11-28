@@ -1,7 +1,7 @@
 @import "./reset.css";
 
 :root {
-    --app-dark-bg:#1a1d28;
+    --app-dark-bg:#1f2227;
     --app-red:#ff3c57;
     --app-yellow:#ffd13c;
     --app-green:#33ab4e;
@@ -10,14 +10,14 @@
     --app-orange:#ff833c;
     --app-pink:#f85fdc;
     --app-orange-hover:#fe7a2d;
-    --app-blue:#4267B2;
-    --app-blue-hover:#305bb3;
-    --app-white:#f4f6f8;
-    --app-black:#181818;
+    --app-blue:#3b5998;
+    --app-blue-hover:#30529c;
+    --app-white:#fbfbfb;
+    --app-black:#1a1d21;
     --app-dark-grey:#222;
     --app-medium-grey:#b0b3b8;
     --app-light-grey:#e4e6eb;
-    --app-light-text-color: #f4f6f8;
+    --app-light-text-color: #fbfbfb;
     --app-dark-text-color: #1c1c1c;
     --app-grey-text-color: #343434;
 
@@ -31,7 +31,7 @@
 }
     
 body {
-    background-color: var(--app-black);
+    background-color: var(--app-dark-bg);
 }
 
 .container {
@@ -42,9 +42,6 @@ body {
 /**************************************************/
 /*****       Main                            ******/
 /**************************************************/
-/* h1, h2, h3, a, p {
-    color: rgb(244, 246, 248);
-} */
 
 h2 {
     margin-bottom: 20px;
@@ -71,8 +68,8 @@ p {
 header {
     line-height: var(--app-header-line-height);
     height: 56px;
-    min-width: 350px;
-    background-color: var(--app-dark-grey);
+    min-width: 700px;
+    background-color: var(--app-black);
 }
 
 header .flexbox {
@@ -101,73 +98,48 @@ header h1 {
     margin-top: 8px;
 }
 
-/* Show regular nav menu when screen width is 923px and above */
-@media only screen and (min-width: 923px) { 
-
-    .burger-menu {
-        display: none;
-    }
-    
-    nav ul {
-        list-style: none;
-    }
-    
-    nav ul li {
-        display: inline;
-    }
-    
-    nav ul li + li {
-        margin-left: 18px;
-    }
-    
-    nav ul li a {
-        font-size: 16px;
-        font-weight: 600;
-        letter-spacing: var(--app-letter-spcaing);
-        cursor: pointer;
-        text-decoration: none;
-        color: var(--app-light-text-color);
-        position: relative;
-        transition: color 0.25s ease-in-out;
-    }
-
-    nav ul li a:hover {
-        color: var(--app-blue);
-    }
+nav ul {
+    list-style: none;
 }
 
-/* Show hamburger icon when screen width is below 922px */
-@media only screen and (max-width: 922px) {
-    nav {
-        display: none;
-    }
-
-    .burger-menu {
-        display: block;
-        color: var(--app-light-text-color);
-        font-size: var(--app-main-font-size);
-        line-height:  var(--page-header-line-height);
-    }
-    
-    .burger-menu:hover {
-        display: block;
-        color: var(--app-blue);
-    }
+nav ul li {
+    display: inline;
 }
+
+nav ul li + li {
+    margin-left: 18px;
+}
+
+nav ul li a {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: var(--app-letter-spcaing);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--app-light-text-color);
+    position: relative;
+    transition: color 0.25s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: var(--app-blue);
+}
+
 
 /**************************************************/
 /*****   MAIN CONTAINER (Post)               ******/
 /**************************************************/
 
 .timeline {
-    width: 50%;
+    min-width: 600px;
+    max-width: 600px;
     margin-inline: auto;
 }
 
 .timeline-post {
     padding: 20px;
     width: 100%;
-    background-color: var(--app-dark-grey);
+    background-color: var(--app-black);
     margin-top: 20px;
     border-radius: 5px;
 }
@@ -209,10 +181,12 @@ header h1 {
 .file-icon{
     cursor: pointer;
     color: var(--app-white);
+    font-size: 30px;
 }
 
 .timeline-post .form .flexbox button {
     height: 40px;
+    width: 70px;
     text-align: center;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
@@ -255,18 +229,28 @@ header h1 {
     margin-bottom: 10px;
 }
 
-.grid > div.card .post-header img {
-    width: 30px;
-    height: 30px;
-    text-align: left;
+.grid > div.card .post-header .post-profile-pic {
+    width: 7%;
 }
 
-.grid > div.card .post-header h4 {
+.grid > div.card .post-header .post-profile-pic img {
+    width: 30px;
+    height: 30px;
+}
+
+.grid > div.card .post-header .profile-name {
+    width: 73%;
     color: var(--app-dark-text-color);
     font-size: 15px;
     font-weight: 600;
     text-align: left;
-    width: 70%;
+    margin-left: 5px;
+}
+
+.grid > div.card .post-header .post-date {
+    color: rgba(28, 28, 28, 0.6);
+    font-size: 15px;
+    width: 20%;
     margin-left: 5px;
 }
 
@@ -280,6 +264,12 @@ header h1 {
     margin-bottom: 10px;
 }
 
+.grid > div.card .post-body .post-body-img {
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
 .message {
     width: 100%;
     height: 40px;
@@ -291,7 +281,7 @@ header h1 {
 .message p {
     opacity: 0;
     font-size: 14px;
-    animation: disappearUp 5s ease-in-out;
+    animation: disappear 5s ease-in-out;
 }
 
 .message p.invalid {
@@ -323,8 +313,7 @@ header h1 {
 }
 
 .profile-info {
-    width: 400px;
-    height: 600px;
+    width: 600px;
     background-color: var(--app-white);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
     border-radius: 5px;
@@ -334,15 +323,21 @@ header h1 {
 }
 
 .profile-info .profile-avatar {
-    padding: 20px;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .profile-info .profile-details {
-    padding: 20px;
-    text-align: left;
+    padding: 20px 10px;
+    display: grid;
+    place-items: center;
+}
+
+.profile-info .profile-details h2 {
+    width: 100%;
+    text-align: center;
 }
 
 .profile-info .profile-details p {
@@ -350,12 +345,31 @@ header h1 {
     font-weight: 400;
 }
 
-.profile-info .profile-details p span {
+.profile-info .profile-details .profile-label {
     font-weight: 600;
 }
 
-.profile-info .profile-details p + p {
-    margin-bottom: 10px;
+.profile-info .profile-details table {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+table tr:nth-child(even) {
+    background: rgba(66, 103, 178, 0.06);
+}
+
+table th, table td {
+    padding: 10px 5px;
+}
+
+.fa-check {
+    font-size: 16px;
+    color: var(--app-green);
+}
+
+.fa-xmark {
+    font-size: 16px;
+    color: var(--app-red);
 }
 
 /**************************************************/
@@ -381,5 +395,14 @@ header h1 {
     to {
         opacity: 1;
         transform: translate(0);
+    }
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
