@@ -64,8 +64,6 @@ function submitForm(postInput, postFile) {
 
 // function to validate form input
 function validateFormInput () {
-    console.log(postInput.value);
-    console.log(postFile.value);
     if(postInput.value === '' && postFile.value === '') {
         message.innerHTML = `<p class="invalid">Your post cannot be empty.</p>`;
     } else {
@@ -103,37 +101,9 @@ const profilePhoto = select('.avatar');
 const overlay = select('.overlay');
 const profileInfo = select('.profile-info');
 const profileDetails = select('.profile-details');
-const monetize = '<i class="fa-solid fa-check"></i>';
-const dontMonetize = '<i class="fa-solid fa-xmark"></i>';
 
 function retriveSubscriberInfo() {
-    profileDetails.innerHTML = `
-        <h2><span class="profile-label">${subscriber.name}</span> (ID: ${subscriber.id})</h2>
-        <table>
-            <tbody>
-                <tr>
-                    <td><span class="profile-label">User Name: </span></td>
-                    <td><p>${subscriber.userName}</p></td>
-                </tr>
-                <tr>
-                    <td><span class="profile-label">Email: </span></td>
-                    <td><p>${subscriber.email}</p></td>
-                </tr>
-                <tr>
-                    <td><span class="profile-label">Pages: </span></td>
-                    <td><p>${subscriber.pages.join(', ')}</p></td>
-                </tr>
-                <tr>
-                    <td><span class="profile-label">Groups: </span></td>
-                    <td><p>${subscriber.groups.join(', ')}</p></td>
-                </tr>
-                <tr>
-                    <td><span class="profile-label">Monetized Subscription: </span></td>
-                    <td><p>${(subscriber.canMonetize) ? monetize : dontMonetize}</p></td>
-                </tr>
-            </tbody>
-        </table>
-    `;
+    profileDetails.innerHTML = subscriber.getInfo();
 }
 
 onEvent('click', profilePhoto, function () {

@@ -5,4 +5,4 @@
 
 ## Description
 
-Mokckup Social Media Website built using HTML, CSS, EcmaScript (ES) modules and [lite-server](https://www.npmjs.com/package/light-server)
+Mockkup Social Media Website built using HTML, CSS, EcmaScript (ES) modules and [lite-server](https://www.npmjs.com/package/light-server)

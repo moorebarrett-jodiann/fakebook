@@ -36,12 +36,12 @@ class User {
     }
 
     getInfo() {
-        return `
-            ${this.id}
-            ${this.name}
-            ${this.#userName}
-            ${this.#email}
-        `;
+        const obj = {};
+        obj['id'] = this.id;
+        obj['name'] = this.name;
+        obj['userName'] = this.userName;
+        obj['email'] = this.email;
+        return obj;
     }
 }
 
