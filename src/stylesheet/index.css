@@ -76,10 +76,17 @@ header .flexbox {
     justify-content: space-between;
 }
 
-header h1 {
+header .title h1 {
     font-size: 22px;
     font-weight: 600;
     color: var(--app-blue);
+}
+
+header .title a {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--app-blue);
+    text-decoration: none;
 }
 
 .avatar {
@@ -313,7 +320,7 @@ nav ul li a:hover {
 }
 
 .profile-info {
-    width: 600px;
+    width: 500px;
     background-color: var(--app-white);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
     border-radius: 5px;
